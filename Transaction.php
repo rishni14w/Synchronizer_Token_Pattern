@@ -6,16 +6,15 @@ window.addEventListener('load', function() {
             dataType: "json",
             success: function(result){
                    if(result.status == "Success"){
-                           console.log(result.value);
-                           alert(result.value);
                            $("#submit_btn").before('<input type="hidden" name="csrfToken" value="'+result.value+'">');
+
                     }
                   else{
-                          console.log('Error: No such variable value present')
+                          console.log("no value")
                    }
           },
           error:function(){
-                console.log("Error: Unknown Error")
+                console.log("error")
           }
      })
 })
@@ -36,7 +35,6 @@ window.addEventListener('load', function() {
 			To Account: <input type="number" name="to"><br/> <br/>
 			Amount: <input type="number" name="amount"><br/> <br/>
 			<input type="submit" id="submit_btn" value="Transfer">
-			<!--<input type="hidden" name="token" value=""> -->
 			</div>
 		</form>
 	</body>
